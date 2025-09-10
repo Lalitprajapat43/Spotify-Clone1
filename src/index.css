@@ -1,0 +1,11 @@
+@import "tailwindcss";
+body{
+    background-color:#000000;
+    
+}
+.Scrollbar{
+  overflow-y: scroll;
+  
+  scrollbar-color: rgba(255, 255, 255, 0) transparent;
+}
+
