@@ -19,6 +19,10 @@ const RomanticSongs = allsong.filter(song =>
 
   return (
     <div className='Scrollbar text-white lg:px-2  w-full  overscroll-scroll h-[70vh]'>
+
+      <div className=' md:hidden lg:hidden'>
+      <h1>hello</h1>
+      </div>
      
       <div className='flex flex-col gap-3'>
         <h1 className='text-[1.5rem] font-bold'>Recommended for you</h1>
