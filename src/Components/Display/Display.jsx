@@ -7,7 +7,7 @@ import SearchBar from './SearchBar'
 
 export default function Display({setplayersong, setplaylist}) {
   return (
-    <div className='h-[80vh] sm:bg-[#202020]  lg:bg-[#202020] min-w-300 w-full rounded-[10px]'>
+    <div className='h-[80vh] sm:bg-[#202020]  lg:bg-[#202020]  min-w-200 w-352 rounded-[10px]'>
       <DisplayNavBar/>
  
     

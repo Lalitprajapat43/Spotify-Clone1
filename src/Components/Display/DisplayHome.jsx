@@ -18,13 +18,13 @@ const RomanticSongs = allsong.filter(song =>
   // console.log(romanticsong)
 
   return (
-    <div className='Scrollbar text-white lg:px-4 min-w-300  w-full  overscroll-scroll h-[70vh]'>
+    <div className='Scrollbar text-white lg:px-2  w-full  overscroll-scroll h-[70vh]'>
      
       <div className='flex flex-col gap-3'>
         <h1 className='text-[1.5rem] font-bold'>Recommended for you</h1>
 
         {/* Recommended Artists */}
-        <div className='flex overflow-x-scroll'>
+        <div className='flex  w-full  gap-4 overflow-x-scroll'>
           {SpotifyData.map((artist, artistIndex) => (
             <Link to="/playlist" >
               <div key={artistIndex}
@@ -50,7 +50,7 @@ const RomanticSongs = allsong.filter(song =>
         {/* Playlist Songs */}
 <div className='flex flex-col '>
           <h1 className=' text-white text-[1.5rem] font-bold py-2 px-2'>Romantic Songs</h1>
-   <div className='flex w-full gap-4 overflow-x-scroll'>
+   <div className='flex  w-full  gap-4 overflow-x-scroll'>
  
   {RomanticSongs.length > 0 ? (
     RomanticSongs.map((song, index) => (

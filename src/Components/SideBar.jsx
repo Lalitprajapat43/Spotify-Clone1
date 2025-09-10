@@ -24,7 +24,7 @@ export default function SideBar({setplaylist }) {
 
     return (
         <div className='hidden lg:flex md:flex'>
-            <section className={` h-[80vh] px-2 rounded-[10px] bg-[#202020]  text-white font-sans  transition-all duration-900 ${isOpen ? "w-90" : "w-20 pt-5"}`}>
+            <section className={` h-[80vh] px-2 rounded-[10px] bg-[#202020]  text-white font-sans  transition-all duration-900 ${isOpen ? "w-70" : "w-20 pt-5"}`}>
              
               
                 <header className=' fix '>
