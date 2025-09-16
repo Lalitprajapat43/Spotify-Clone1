@@ -58,7 +58,7 @@ export default function NavBar() {
     {/* Right Section */}
       <div className='flex gap-5   items-center'>
         <div className='flex gap-3  cursor-pointer'>
-        <button className='bg-white p-1 px-7 rounded-[50px] text-[1.2rem] text-black font-bold'>Explore More</button>
+        <button className='bg-white p-1 px-7 rounded-[50px] text-[1.2rem] text-black font-bold'>Lalit Prajapat</button>
         <div className='flex flex-col bg-white w-[1px]'>
           <div>
       </div>
