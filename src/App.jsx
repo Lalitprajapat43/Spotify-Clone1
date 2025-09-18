@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
-
+import { BrowserRouter ,Routes,Route } from 'react-router-dom'
 import Home from './Pages/Home'
+import LandingPage from './Pages/LandingPage'
 
 
 export default function App() {
@@ -9,7 +10,12 @@ export default function App() {
   // })
   return (
     <div>
-         <Home/>
+        
+        <Routes>
+          <Route path='/' element={<LandingPage/>}/>
+          <Route path='/home' element={<Home/>}/>
+        </Routes>
+       
    
       
     </div>
