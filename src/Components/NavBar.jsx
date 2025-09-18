@@ -30,7 +30,7 @@ export default function NavBar() {
           <FaChevronRight className='size-7 font-light  cursor-pointer text-gray-400 active:text-white' />
         </div>
         <div className='flex gap-3 items-center '>
-         <Link to={'/'}> <div className='w-12 h-12 bg-[#202020] cursor-pointer flex items-center justify-center rounded-[50%]  hover:bg-gray-800  '>
+         <Link to={'/home'}> <div className='w-12 h-12 bg-[#202020] cursor-pointer flex items-center justify-center rounded-[50%]  hover:bg-gray-800  '>
              <BiHome className='size-8 text-gray-300 hover:text-white active:text-green-600 '  />
           </div></Link>
           <div className='flex gap-1 rounded-[50px]   justify-between items-center   shadow-gray-600 bg-[#202020]  p-2 w-120 
