@@ -3,7 +3,9 @@ import NavBar from '../Components/NavBar'
 import SideBar from '../Components/SideBar'
 import Player from '../Components/Player'
 import Display from '../Components/Display/Display.jsx'
+import MobileFooter from '../Components/MobileFooter.jsx'
 
+// import Playlist from '../Components/Display/Playlist.jsx'
 import Playlist from '../Components/Display/Playlist.jsx'
 import { Routes,Route } from 'react-router-dom'
 
@@ -23,9 +25,13 @@ export default function Home() {
       <Routes>
          <Route path='/' element={ <Display setplayersong={setplayersong} setplaylist={setplaylist} />}/>
           <Route path='/playlist' element={<Playlist playlist={playlist} setplayersong={setplayersong}/>}/>
+          {/* <Route path="/list" element={<Playlist/>}/> */}
       </Routes>
-    </div>
+    </div> 
     <Player playersong={playersong} />
+   <div className='flex lg:hidden md:hidden'>
+     <MobileFooter/>
+   </div>
   
       
     </div>

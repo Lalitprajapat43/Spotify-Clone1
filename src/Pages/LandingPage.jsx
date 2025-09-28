@@ -11,11 +11,11 @@ export default function LandingPage() {
           <FaSpotify className="text-3xl" />
           Spotify-Clone
         </div>
-        <nav className="flex gap-6 text-white font-medium">
-          <a href="#features" className="hover:text-green-500">Features</a>
-          <a href="#about" className="hover:text-green-500">About</a>
-          <a href="#login" className="hover:text-green-500">Login</a>
-        </nav>
+        <ul className="flex gap-6 text-white font-medium">
+          <li className="hover:text-green-500 cursor-pointer">Features</li>
+          <li className="hover:text-green-500 cursor-pointer">About</li>
+          <li className="hover:text-green-500 cursor-pointer">Login</li>
+        </ul>
       </header>
 
       {/* Hero Section */}
@@ -26,12 +26,13 @@ export default function LandingPage() {
         <p className="mt-4 text-lg md:text-xl text-gray-300 max-w-2xl">
           Stream your favorite songs, create playlists, and enjoy the power of music with our Spotify-Clone.
         </p>
-        <li
-          
-          className="mt-8 bg-green-500 hover:bg-green-600 text-black font-bold px-6 py-3 rounded-full text-lg transition-all"
-        
-        >
-          <Link to={'/home'} > Get Started</Link>
+        <li className="list-none mt-8">
+          <Link
+            to="/home"
+            className="bg-green-500 hover:bg-green-600 text-black font-bold px-6 py-3 rounded-full text-lg transition-all inline-block"
+          >
+            Get Started
+          </Link>
         </li>
       </main>
 

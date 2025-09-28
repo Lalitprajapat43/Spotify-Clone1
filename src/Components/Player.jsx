@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { FaPlay, FaPause } from "react-icons/fa6";
 import { CiCirclePlus, CiCircleMinus } from "react-icons/ci";
 import { IoMdVolumeOff } from "react-icons/io";
-import arjunvailly from "../assets/arijitsingh/arjunvailly.mp3"
+import arjunvailly from "../assets/arijitsingh/arjunvailly.mp3";
 
 export default function Player({ playersong }) {
   const audioRef = useRef(null);
@@ -79,26 +79,64 @@ export default function Player({ playersong }) {
   };
 
   const muteVolume = () => {
+  if (volume === 0) {
+    setvolume(100);
+    audioRef.current.volume = 1; // 100 → 1
+  } else {
     setvolume(0);
     audioRef.current.volume = 0;
-  };
+  }
+};
+
 
   if (!playersong) return null;
 
   return (
-  <div className="flex w-full  bg-black h-[10vh]">
-      <div className="flex w-full  justify-between items-center pr-60  p-4 text-white rounded-xl shadow-md ">
+    <div className="w-full bg-white h-[8vh]  text-white">
+      {/* Mobile View - Spotify Mini Player */}
+  <div className="sm:hidden  flex w-full h-full bg-red-500 items-center justify-between px-2">
         {/* Audio element */}
         <audio ref={audioRef} src={playersong?.SongLink || arjunvailly} />
 
-     <div className="flex">
-         {/* Song Info */}
-        <div className="flex gap-2 items-center w-[20rem] ">
-          <img src={playersong.SongImage}  className="h-[9vh]"/>
-         <div>
-           <h1 className="font-bold ">{playersong.SongName}</h1>
-          <p className="text-sm text-gray-400 ">{playersong.SongDisc}</p>
-         </div>
+        {/* Song Info */}
+        <div className="flex items-center gap-2">
+          <img
+            src={playersong.SongImage}
+            alt="song"
+            className="h-12 w-12 object-cover rounded"
+          />
+          <div className="flex flex-col">
+            <h1 className="text-sm font-semibold">{playersong.SongName}</h1>
+            <p className="text-xs text-gray-400">{playersong.SongDisc}</p>
+          </div>
+        </div>
+
+        {/* Play/Pause */}
+        <button
+          onClick={handlepauseplay}
+          className="bg-green-500 text-black w-10 h-10 rounded-full flex items-center justify-center"
+        >
+          {isplaying ? <FaPause /> : <FaPlay />}
+        </button>
+
+        {/* Mute */}
+        <button onClick={muteVolume}>
+          <IoMdVolumeOff className="text-xl" />
+        </button>
+      </div>
+
+      {/* Desktop View - Full Controls */}
+      <div className="hidden sm:flex w-full justify-between items-center pr-60 p-4 text-white">
+        {/* Audio element */}
+        <audio ref={audioRef} src={playersong?.SongLink || arjunvailly} />
+
+        {/* Song Info */}
+        <div className="flex gap-2 items-center w-[20rem]">
+          <img src={playersong.SongImage} className="h-[9vh] rounded" />
+          <div>
+            <h1 className="font-bold">{playersong.SongName}</h1>
+            <p className="text-sm text-gray-400">{playersong.SongDisc}</p>
+          </div>
         </div>
 
         {/* Volume Controls */}
@@ -111,10 +149,9 @@ export default function Player({ playersong }) {
             <CiCirclePlus className="text-[20px] active:text-green-600" />
           </button>
         </div>
-     </div>
 
         {/* Playback Controls */}
-        <div className="flex flex-col items-center  w-[20rem]  ">
+        <div className="flex flex-col items-center w-[20rem]">
           <div className="flex gap-4">
             <button onClick={handlepauseplay}>
               {isplaying ? <FaPause /> : <FaPlay />}
